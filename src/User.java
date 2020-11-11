@@ -20,7 +20,8 @@ public class User {
 		this.videosList = new ArrayList<Video>();
 	}
 	
-	public void createVideo() {
+	public void createVideo() throws MissingBasicInfo {
+		
 		String url = getMandatoryInfo.getInfo("Please enter the url for the video.");
 		String title = getMandatoryInfo.getInfo("Please enter the title for the video.");
 		String tagsInput = getMandatoryInfo.getInfo("Please enter tags separated by comma for the video.");
@@ -33,7 +34,9 @@ public class User {
 	}
 	
 	public String toString() {
-		String info = "name: '" + this.name + "'\n" +
+		String info = "User info:\n" +
+					  "---------\n" +
+					  "name: '" + this.name + "'\n" +
 					  "surname: '" + this.surname + "'\n" +
 					  "password: '" + this.password + "'\n" + 
 					  "registered: '" + this.signUp_date +"'\n\n" +
